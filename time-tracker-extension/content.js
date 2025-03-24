@@ -1,0 +1,1 @@
+console.log('Time Tracker Extension Loaded');
