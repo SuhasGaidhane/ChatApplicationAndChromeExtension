@@ -1,0 +1,17 @@
+<div>
+  <h2>Your ID: {{ userId }}</h2>
+
+  <!-- Connect to User -->
+  <input type="text" placeholder="Enter User ID to Connect" [(ngModel)]="targetUserId">
+  <button (click)="connectToUser()">Connect</button>
+
+  <!-- Send Message -->
+  <input type="text" #messageInput placeholder="Type a message..." />
+  <button (click)="sendMessage(messageInput)">Send</button>
+
+  <!-- Message Display -->
+  <div>
+    <h3>Messages:</h3>
+    <div *ngFor="let msg of messages">{{ msg }}</div>
+  </div>
+</div>

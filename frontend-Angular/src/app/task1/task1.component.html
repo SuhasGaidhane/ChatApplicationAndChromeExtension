@@ -1,0 +1,26 @@
+<div class="weather-container" *ngIf="weatherData?.current_weather">
+  <h2>Current Weather</h2>
+
+  <div class="weather-details">
+    <div class="detail">
+      <label>Temperature:</label>
+      <span>{{ weatherData.current_weather.temperature }}°C</span>
+    </div>
+    <div class="detail">
+      <label>Wind Speed:</label>
+      <span>{{ weatherData.current_weather.windspeed }} km/h</span>
+    </div>
+    <div class="detail">
+      <label>Wind Direction:</label>
+      <span>{{ weatherData.current_weather.winddirection }}°</span>
+    </div>
+    <div class="detail">
+      <label>Weather Code:</label>
+      <span>{{ weatherData.current_weather.weathercode }}</span>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!weatherData">
+  <p>Loading weather data...</p>
+</div>

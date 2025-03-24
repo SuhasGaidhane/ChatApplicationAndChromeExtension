@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Student Data Management</h1>
+
+  <!-- ✅ Form for adding a student -->
+  <form (submit)="addStudent()" class="form">
+    <input
+      type="text"
+      name="studentName"
+      [(ngModel)]="newStudent.name"
+      placeholder="Student Name"
+      required
+    />
+    <input
+      type="text"
+      name="className"
+      [(ngModel)]="newStudent.class_"
+      placeholder="Class"
+      required
+    />
+    <input
+      type="number"
+      name="studentMarks"
+      [(ngModel)]="newStudent.marks"
+      placeholder="Marks"
+      required
+    />
+    <button type="submit">Add Student</button>
+  </form>
+
+  <!-- ✅ Search box for filtering -->
+  <input
+    type="text"
+    name="filter"
+    [(ngModel)]="filterValue"
+    placeholder="Search by name or class"
+    (input)="filterData()"
+    [ngModelOptions]="{standalone: true}"
+  />
+
+  <!-- ✅ List of students -->
+  <ul>
+    <li *ngFor="let student of filteredStudents">
+      {{ student.name }} - {{ student.class_ }} - {{ student.marks }}
+    </li>
+  </ul>
+</div>

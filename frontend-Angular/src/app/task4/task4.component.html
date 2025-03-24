@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Productivity Dashboard</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Domain</th>
+      <th>Total Time Spent (min)</th>
+<!--      <th>Timestamp</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let entry of timeEntries">
+      <td>{{ entry.domain }}</td>
+      <td>{{ entry.timeSpent | number: '1.2-2' }}</td>
+<!--      <td>{{ entry.timestamp | date: 'short' }}</td>-->
+    </tr>
+    </tbody>
+  </table>
+</div>

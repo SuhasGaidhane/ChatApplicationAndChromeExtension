@@ -1,0 +1,17 @@
+<div class="tabs-container">
+  <div class="tabs">
+    <button
+      *ngFor="let tab of ['task1', 'task2', 'task3', 'task4']"
+      [class.active]="selectedTab === tab"
+      (click)="selectTab(tab)">
+      {{ tab | titlecase }}
+    </button>
+  </div>
+
+  <div class="content">
+    <app-task1 *ngIf="selectedTab === 'task1'"></app-task1>
+    <app-task2 *ngIf="selectedTab === 'task2'"></app-task2>
+    <app-task3 *ngIf="selectedTab === 'task3'"></app-task3>
+    <app-task4 *ngIf="selectedTab === 'task4'"></app-task4>
+  </div>
+</div>
